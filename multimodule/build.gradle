@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "${springBootVersion}" apply false
+    id 'io.spring.dependency-management' version "${springDependencyManagementVersion}"
+}
+
+apply {
+    from './gradle/java.gradle'
+    from './gradle/lombok.gradle'
+    from './gradle/junit.gradle'
+    from './gradle/spring.gradle'
+}
+
+allprojects {
+    group = "${projectGroup}"
+    version = "${applicationVersion}"
+
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.withType(Javadoc) {
+        failOnError = false
+    }
+}

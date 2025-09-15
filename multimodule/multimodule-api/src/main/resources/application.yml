@@ -1,0 +1,8 @@
+spring:
+  config:
+    import:
+      - "application-persistence.yml"
+
+logging:
+  level:
+    org.springframework: INFO

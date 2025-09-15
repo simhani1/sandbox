@@ -1,0 +1,9 @@
+rootProject.name = 'multimodule'
+def R = rootProject.name
+
+include(":${R}-core")
+include(":${R}-domain")
+include(":${R}-persistence")
+
+include(":${R}-api:${R}-api-client")
+include(":${R}-api:${R}-api-admin")
