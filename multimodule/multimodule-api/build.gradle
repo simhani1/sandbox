@@ -1,0 +1,11 @@
+dependencies {
+    implementation project(':multimodule-core')
+    implementation project(':multimodule-domain')
+    
+    implementation project(':multimodule-api:multimodule-api-admin')
+    implementation project(':multimodule-api:multimodule-api-client')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}

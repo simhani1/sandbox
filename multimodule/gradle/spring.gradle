@@ -1,0 +1,27 @@
+subprojects {
+
+    apply {
+        plugin('org.springframework.boot')
+        plugin('io.spring.dependency-management')
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        }
+    }
+
+    bootJar.enabled = false;
+    jar.enabled = true;
+
+    if (name.equals('multimodule-api')) {
+        bootJar.enabled = true
+    }
+
+    if (!name.contains('domain')) {
+        dependencies {
+            implementation 'org.springframework.boot:spring-boot-starter-web'
+            testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        }
+    }
+}

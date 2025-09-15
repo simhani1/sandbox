@@ -1,0 +1,8 @@
+rootProject.name = 'multimodule'
+def R = rootProject.name
+
+['core', 'api', 'domain', 'persistence']
+        .each { include(":${R}-${it}") }
+
+['api-client', 'api-admin']
+        .each { include(":${R}-api:${R}-${it}") }
