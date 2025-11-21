@@ -48,6 +48,6 @@ class MainTest {
 		// WHEN
 		// THEN
 		assertThatThrownBy(() -> factory.send(undefinedRequest))
-			.isInstanceOf(RuntimeException.class);
+			.isInstanceOf(IllegalArgumentException.class);
 	}
 }
